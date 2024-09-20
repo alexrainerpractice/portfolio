@@ -1,0 +1,155 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-size: .925rem;
+}
+
+
+
+/* MEDIA GALLERY + CAPTION + COUNTER */
+
+#counter-container {
+    position: fixed;
+    top: .8rem;
+    left: .8rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: 9.6rem;
+
+    color: black;
+
+    z-index: 2;
+}
+
+
+#media-counter, #scroll-counter, #media-caption {
+    margin-bottom: 5px;
+}
+
+#media-caption {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.media-container {
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-container img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.media-container video{
+    max-width: 100%;
+    max-height: 50%;
+    object-fit: cover;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 1;
+    transition: opacity .3s ease-out;
+}
+
+.fade-out.hide {
+    opacity: 0;
+}
+
+
+
+
+
+/* PAGE INFO */
+
+#page-info{
+    display: flex;
+    flex-direction: row;
+    padding-right: .7rem;
+    padding-left: .7rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-info #page-description{
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: black;
+}
+
+#back-btn{
+    position: fixed;
+    bottom: .8rem;
+    left: .8rem;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+    .media-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .media-container .media-wrapper{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .media-container img {
+        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #counter-container {
+        gap: 2.4rem;
+    }
+
+}
+
+
